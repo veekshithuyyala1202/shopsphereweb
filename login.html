@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(to right, #ff9966, #ff5e62);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            background: rgba(255,255,255,0.2);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            text-align: center;
+            color: white;
+            width: 300px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-bottom: 2px solid white;
+            background: transparent;
+            color: white;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 20px;
+            background: white;
+            color: black;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+    <h2>Register</h2>
+
+    <input type="text" id="newuser" placeholder="Create Username">
+    <input type="password" id="newpass" placeholder="Create Password">
+    <input type="password" id="Re-enter pass" placeholder="Re-enter password">
+
+    <button onclick="register()">Register</button>
+</div>
+
+<script>
+function register() {
+    var user = document.getElementById("newuser").value;
+    var pass = document.getElementById("newpass").value;
+    var enter = document.getElementById("Re-enter pass").value;
+
+    localStorage.setItem("username", user);
+    localStorage.setItem("password", pass);
+    localStorage.setItem("Re-enter pass", enter);
+
+    alert("Registration Successful!");
+    window.location.href = "vikki.html";
+}
+</script>
+
+</body>
+</html>
